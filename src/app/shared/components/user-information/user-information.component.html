@@ -1,0 +1,17 @@
+<section class="user-information">
+  <div class="user-information__main-information">
+    <img ngSrc="{{ userInformation.avatar_url }}" alt="User Avatar" width="80" height="80"/>
+    <div class="user-information__main-information__bio">
+      <h2>{{ userInformation.name }}</h2>
+      <h3>{{ userInformation.login }}</h3>
+      <h3>{{ userInformation.location }}</h3>
+
+      <p>{{ userInformation.bio }}</p>
+    </div>
+    <div class="user-information__main-information__bio">
+      <h4>Repositórios: {{ userInformation.public_repos }}</h4>
+      <h4>Seguidores: {{ userInformation.followers }}</h4>
+      <h4>Seguindo: {{ userInformation.followers }}</h4>
+    </div>
+  </div>
+</section>

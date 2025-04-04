@@ -1,0 +1,41 @@
+.user-information {
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+   &__main-information {
+    display: flex;
+    padding: 10px;
+    gap: 40px;
+
+    img {
+      border-radius: 50%;
+      padding-right: 10px;
+    }
+
+    &__bio {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      h4 {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+   }
+}
