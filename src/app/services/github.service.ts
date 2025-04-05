@@ -13,9 +13,9 @@ export class GithubService {
 
   constructor(private http: HttpClient) { }
 
-  getGithubUser(username: string): Observable<GithubUser[]> {
+  getGithubUser(username: string): Observable<GithubUser> {
     try {
-      return this.http.get<GithubUser[]>(this.getUserPath.replace('USERNAME', username), {
+      return this.http.get<GithubUser>(this.getUserPath.replace('USERNAME', username), {
         headers: {
           "Accept": "application/vnd.github+json",
           "Authorization": "Bearer " + environment.gitHubToken,

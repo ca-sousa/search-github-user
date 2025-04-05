@@ -8,6 +8,8 @@
         <img ngSrc="/search-icon.svg" alt="icone de busca" width="15" height="15"/>
       </button>
     </form>
-    <app-user-information />
+    @if (userInformation) {
+      <app-user-information [userInformation]="userInformation"/>
+    }
   </section>
 </main>

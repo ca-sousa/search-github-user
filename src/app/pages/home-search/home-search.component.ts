@@ -15,7 +15,7 @@ import { GithubUser } from '../../interfaces/github';
 export class HomeSearchComponent {
   githubUser!: FormGroup;
   loading = signal(false);
-  userInformation: GithubUser[] = [];
+  userInformation: GithubUser | undefined;
 
   constructor(private service: GithubService) {
     this.githubUser = new FormGroup({
@@ -34,6 +34,9 @@ export class HomeSearchComponent {
           }
           this.loading.set(false);
           this.githubUser.reset();
+        },
+        error: () => {
+          this.loading.set(false);
         }
       });
     }
