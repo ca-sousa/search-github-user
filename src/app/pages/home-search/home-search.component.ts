@@ -23,6 +23,8 @@ export class HomeSearchComponent {
     });
   }
 
+  // fazer handle de loading
+
   handleSubmit() {
     this.loading.set(true);
     if (this.githubUser.valid) {

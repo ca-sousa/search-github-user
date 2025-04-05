@@ -8,7 +8,7 @@ export const routes: Routes = [
     component: HomeSearchComponent
   },
   {
-    path: "repositories-list",
+    path: "repositories-list/:user-id",
     component: RepositoriesListComponent
   }
 ];
