@@ -14,7 +14,7 @@ main {
     }
 
     h3 {
-      margin-top: 10px;
+      margin: 10px 0 10px 0;
       font-weight: 400;
       font-size: 16px;
     }
@@ -30,9 +30,9 @@ main {
       }
       
       button {
-        background-color: #f5f5f5;
+        border: 1px solid #f5f5f5;
+        background-color: transparent;
         border-radius: 55%;
-        border: none;
         padding: 5px;
         margin-left: 10px;
       }

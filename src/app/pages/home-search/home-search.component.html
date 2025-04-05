@@ -3,9 +3,9 @@
     <h1>Github Search </h1>
     <h3> Pesquise usuários do Github de forma rápida e prática, comece por aqui</h3>
     <form [formGroup]="githubUser" (ngSubmit)="handleSubmit()">
-      <input aria-label="Insira o username" id="githubUser" type="text" formControlName="username" name="username" placeholder="Insira o username"/>
+      <input aria-label="Insira o username" id="githubUser" type="text" formControlName="username" name="username" placeholder="Digite o username"/>
       <button [disabled]="!githubUser.valid" type="submit">
-        <img ngSrc="/search-icon.png" alt="icone de busca" width="15" height="15"/>
+        <img ngSrc="/search-icon.svg" alt="icone de busca" width="15" height="15"/>
       </button>
     </form>
     <app-user-information />

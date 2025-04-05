@@ -1,17 +1,17 @@
 <section class="user-information">
   <div class="user-information__main-information">
-    <img ngSrc="{{ userInformation.avatar_url }}" alt="User Avatar" width="80" height="80"/>
+    <img ngSrc="{{ userInformation.avatar_url }}" alt="User Avatar" width="80" height="80" class="user-information__main-information__avatar"/>
     <div class="user-information__main-information__bio">
       <h2>{{ userInformation.name }}</h2>
       <h3>{{ userInformation.login }}</h3>
-      <h3>{{ userInformation.location }}</h3>
-
+      <h3><img ngSrc="/place-icon.svg" alt="Localização" width="15" height="15"/>{{ userInformation.location }}</h3>
       <p>{{ userInformation.bio }}</p>
     </div>
     <div class="user-information__main-information__bio">
-      <h4>Repositórios: {{ userInformation.public_repos }}</h4>
-      <h4>Seguidores: {{ userInformation.followers }}</h4>
-      <h4>Seguindo: {{ userInformation.followers }}</h4>
+      <h4><img ngSrc="/folder-icon.svg" alt="Repositórios" width="15" height="15"/>Repositórios: {{ userInformation.public_repos }}</h4>
+      <h4><img ngSrc="/following-icon.svg" alt="Seguidores" width="15" height="15"/>Seguidores: {{ userInformation.followers }}</h4>
+      <h4><img ngSrc="/follow-icon.svg" alt="Seguindo" width="15" height="15"/>Seguindo: {{ userInformation.followers }}</h4>
     </div>
+    <img ngSrc="/arrow-right.svg" alt="Mais sobre usuário" width="20" height="20"/>
   </div>
 </section>

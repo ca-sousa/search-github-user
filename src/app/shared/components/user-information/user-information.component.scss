@@ -1,12 +1,13 @@
 .user-information {
   border: 1px solid #f5f5f5;
   border-radius: 10px;
+
    &__main-information {
     display: flex;
     padding: 10px;
     gap: 40px;
 
-    img {
+    &__avatar {
       border-radius: 50%;
       padding-right: 10px;
     }
@@ -25,11 +26,15 @@
       h3 {
         font-size: 16px;
         font-weight: 400;
+        display: flex;
+        gap: 4px;
       }
 
       h4 {
         font-size: 14px;
         font-weight: 400;
+        display: flex;
+        gap: 4px;
       }
 
       p {
