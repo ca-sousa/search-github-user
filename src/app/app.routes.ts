@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
 import { HomeSearchComponent } from './pages/home-search/home-search.component';
+import { RepositoriesListComponent } from './pages/repositories-list/repositories-list.component';
 
 export const routes: Routes = [
   {
     path: "",
     component: HomeSearchComponent
+  },
+  {
+    path: "repositories-list",
+    component: RepositoriesListComponent
   }
 ];
-
-// página inicial onde busca o usuário
-// página que lista todos os repositórios daquele usuário
-// página de detalhes do repositorio 
