@@ -10,7 +10,7 @@
     <div class="user-information__main-information__bio">
       <h4><img ngSrc="/folder-icon.svg" alt="Repositórios" width="15" height="15"/>Repositórios: {{ userInformation.public_repos }}</h4>
       <h4><img ngSrc="/following-icon.svg" alt="Seguidores" width="15" height="15"/>Seguidores: {{ userInformation.followers }}</h4>
-      <h4><img ngSrc="/follow-icon.svg" alt="Seguindo" width="15" height="15"/>Seguindo: {{ userInformation.followers }}</h4>
+      <h4><img ngSrc="/follow-icon.svg" alt="Seguindo" width="15" height="15"/>Seguindo: {{ userInformation.following }}</h4>
     </div>
     <button type="button" (click)="navigateToRepositoriesList()">
       <img ngSrc="/arrow-right.svg" alt="Mais sobre usuário" width="20" height="20"/>
