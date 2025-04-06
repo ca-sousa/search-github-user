@@ -39,14 +39,12 @@ export class HomeSearchComponent {
           next: (res) => {
             if (res) {
               this.userInformation = res;
-              console.log(res)
             }
             this.loading.set(false);
             this.githubUser.reset();
           },
           error: (error) => {
             this.error.set(error.status);
-            console.log(error.status);
             this.loading.set(false);
           }
         });
