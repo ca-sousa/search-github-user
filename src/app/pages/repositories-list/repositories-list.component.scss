@@ -35,3 +35,18 @@ main {
     }
   }
 }
+
+@media (max-width: 600px) {
+  main {
+    padding-top: 10%;
+
+    .repositories-list {
+      min-width: 70vw;
+      max-height: 85vh;
+
+      &__container {
+        max-height: 70vh;
+      }
+    }
+  }
+}

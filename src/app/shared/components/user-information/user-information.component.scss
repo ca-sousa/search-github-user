@@ -1,10 +1,12 @@
 .user-information {
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+
    &__main-information {
-    border: 1px solid #f5f5f5;
-    border-radius: 10px;
     display: flex;
-    padding: 10px;
-    gap: 40px;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
 
@@ -43,4 +45,15 @@
       cursor: pointer;
     }
    }
+}
+
+
+
+@media (max-width: 600px) {
+  .user-information {
+    &__main-information {
+      gap: 10px;
+      justify-content: flex-start;
+    }
+  }
 }

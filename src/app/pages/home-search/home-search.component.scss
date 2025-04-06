@@ -41,3 +41,22 @@ main {
 
   }
 }
+
+@media (max-width: 600px) {
+  main {
+    padding-top: 10%;
+
+    section {
+      min-width: 70vw;
+      max-height: 80vh;
+
+      form {
+        padding-top: 5px;
+
+        input {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
