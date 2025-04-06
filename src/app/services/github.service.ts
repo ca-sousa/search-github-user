@@ -8,14 +8,12 @@ import { GithubUser, UserRepositories } from '../interfaces/github';
   providedIn: 'root'
 })
 export class GithubService {
-  private getUserPath = 'https://api.github.com/users/USERNAME';
-  private getUserRepoPath = ' https://api.github.com/users/USERNAME/repos';
 
   constructor(private http: HttpClient) { }
 
   getGithubUser(username: string): Observable<GithubUser> {
     try {
-      return this.http.get<GithubUser>(this.getUserPath.replace('USERNAME', username), {
+      return this.http.get<GithubUser>(environment.paths.getUser.replace('USERNAME', username), {
         headers: {
           "Accept": "application/vnd.github+json",
           "Authorization": "Bearer " + environment.gitHubToken,
@@ -30,7 +28,7 @@ export class GithubService {
 
   getUserRepositories(username: string): Observable<UserRepositories[]> {
     try {
-      return this.http.get<UserRepositories[]>(this.getUserRepoPath.replace('USERNAME', username), {
+      return this.http.get<UserRepositories[]>(environment.paths.getUserRepos.replace('USERNAME', username), {
         headers: {
           "Accept": "application/vnd.github+json",
           "Authorization": "Bearer " + environment.gitHubToken,
