@@ -5,6 +5,7 @@ import { UserInformationComponent } from '../../shared/components/user-informati
 import { GithubService } from '../../services/github.service';
 import { GithubUser } from '../../interfaces/github';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-home-search',
@@ -14,8 +15,10 @@ import { LoadingComponent } from '../../shared/components/loading/loading.compon
   styleUrl: './home-search.component.scss'
 })
 export class HomeSearchComponent {
+  private destroy$ = new Subject<void>();
   githubUser!: FormGroup;
   loading = signal(false);
+  error = signal('');
   userInformation: GithubUser | undefined;
 
   constructor(private service: GithubService) {
@@ -24,24 +27,32 @@ export class HomeSearchComponent {
     });
   }
 
-  // fazer handle de loading
-
   handleSubmit() {
     this.loading.set(true);
     if (this.githubUser.valid) {
-      this.service.getGithubUser(this.githubUser.value.username).subscribe({
-        next: (res) => {
-          if (res) {
-            this.userInformation = res;
-            console.log(res)
+      this.service.getGithubUser(this.githubUser.value.username)
+        .pipe(
+          takeUntil(this.destroy$)
+        )
+        .subscribe({
+          next: (res) => {
+            if (res) {
+              this.userInformation = res;
+              console.log(res)
+            }
+            this.loading.set(false);
+            this.githubUser.reset();
+          },
+          error: (error) => {
+            this.error.set(error);
+            this.loading.set(false);
           }
-          this.loading.set(false);
-          this.githubUser.reset();
-        },
-        error: () => {
-          this.loading.set(false);
-        }
-      });
-    }
-  }
+        });
+      }
+  };
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  };
 }
