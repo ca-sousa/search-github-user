@@ -4,10 +4,11 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import { UserInformationComponent } from '../../shared/components/user-information/user-information.component';
 import { GithubService } from '../../services/github.service';
 import { GithubUser } from '../../interfaces/github';
+import { LoadingComponent } from '../../shared/components/loading/loading.component';
 
 @Component({
   selector: 'app-home-search',
-  imports: [ReactiveFormsModule, NgOptimizedImage, UserInformationComponent],
+  imports: [ReactiveFormsModule, NgOptimizedImage, UserInformationComponent, LoadingComponent],
   providers: [GithubService],
   templateUrl: './home-search.component.html',
   styleUrl: './home-search.component.scss'
