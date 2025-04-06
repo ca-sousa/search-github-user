@@ -1,0 +1,9 @@
+<div class="error">
+  @if (errorCode === 404) {
+    <img ngSrc="/error-404-icon.svg" alt="Animação para carregamento" width="70" height="70"/>
+    <p> Desculpe, mas não encontramos esta informação</p>
+  } @else {
+    <img ngSrc="/error-general-icon.svg" alt="Imagem de erro" width="70" height="70"/>
+    <p> Desculpe, mas ocorreu um erro inesperado</p>
+  }
+</div>

@@ -10,9 +10,10 @@
     </form>
     @if (loading()) {
       <app-loading />
+    } @else if (error()) {
+      <app-error [errorCode]="error()"/>
     } @else if (userInformation) {
       <app-user-information [userInformation]="userInformation"/>
     }
-
   </section>
 </main>
