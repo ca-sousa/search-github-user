@@ -2,12 +2,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  padding-top: 20%;
   
   section {
     background-color: white;
     padding: 30px;
     border-radius: 20px;
+    min-width: 40vw;
+    max-width: 50vw;
+    max-height: 50vh;
 
     h1 {
       margin-bottom: 10px;

@@ -2,12 +2,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  padding-top: 8%;
   
   .repositories-list {
     background-color: white;
     padding: 30px;
     border-radius: 20px;
+    min-width: 40vw;
+    max-width: 50vw;
+    max-height: 70vh;
 
     &__actions {
       display: flex;
@@ -27,7 +30,7 @@ main {
     }
 
     &__container {
-      max-height: 70vh;
+      max-height: 60vh;
       overflow: auto;
     }
   }
