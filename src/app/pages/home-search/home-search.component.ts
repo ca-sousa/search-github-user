@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnDestroy } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { UserInformationComponent } from '../../shared/components/user-information/user-information.component';
 import { GithubService } from '../../services/github.service';
@@ -15,7 +15,7 @@ import { ErrorComponent } from '../../shared/components/error/error.component';
   templateUrl: './home-search.component.html',
   styleUrl: './home-search.component.scss'
 })
-export class HomeSearchComponent {
+export class HomeSearchComponent implements OnDestroy {
   private destroy$ = new Subject<void>();
   githubUser!: FormGroup;
   loading = signal(false);

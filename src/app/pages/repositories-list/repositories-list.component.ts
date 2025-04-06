@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { RepositoryInformationComponent } from '../../shared/components/repository-information/repository-information.component';
 import { ActivatedRoute } from '@angular/router';
 import { GithubService } from '../../services/github.service';
@@ -15,7 +15,7 @@ import { ErrorComponent } from '../../shared/components/error/error.component';
   templateUrl: './repositories-list.component.html',
   styleUrl: './repositories-list.component.scss'
 })
-export class RepositoriesListComponent {
+export class RepositoriesListComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   userId!: string;
   loading = signal(false);
