@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './error.component.scss'
 })
 export class ErrorComponent {
-  @Input() errorCode: number = 500;
+  @Input() errorCode: number | null = 500;
 }

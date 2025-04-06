@@ -19,7 +19,7 @@ export class HomeSearchComponent {
   private destroy$ = new Subject<void>();
   githubUser!: FormGroup;
   loading = signal(false);
-  error = signal(500);
+  error = signal<number | null>(null);
   userInformation: GithubUser | undefined;
 
   constructor(private service: GithubService) {
@@ -30,6 +30,7 @@ export class HomeSearchComponent {
 
   handleSubmit() {
     this.loading.set(true);
+    this.error.set(null);
     if (this.githubUser.valid) {
       this.service.getGithubUser(this.githubUser.value.username)
         .pipe(

@@ -6,10 +6,11 @@ import { UserRepositories } from '../../interfaces/github';
 import { NgOptimizedImage } from '@angular/common';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import { Subject, takeUntil } from 'rxjs';
+import { ErrorComponent } from '../../shared/components/error/error.component';
 
 @Component({
   selector: 'app-repositories-list',
-  imports: [RepositoryInformationComponent, NgOptimizedImage, LoadingComponent],
+  imports: [RepositoryInformationComponent, NgOptimizedImage, LoadingComponent, ErrorComponent],
   providers: [GithubService],
   templateUrl: './repositories-list.component.html',
   styleUrl: './repositories-list.component.scss'
@@ -18,6 +19,7 @@ export class RepositoriesListComponent {
   private destroy$ = new Subject<void>();
   userId!: string;
   loading = signal(false);
+  error = signal<number | null>(null);
   userRepositories: UserRepositories[] | undefined;
   orderStarAscending: boolean = true;
 
@@ -28,6 +30,7 @@ export class RepositoriesListComponent {
 
   ngOnInit() {
     this.loading.set(true);
+    this.error.set(null);
     this.userId = this.route.snapshot.params['user-id'];
     this.service.getUserRepositories(this.userId)
       .pipe(
@@ -40,7 +43,8 @@ export class RepositoriesListComponent {
           }
           this.loading.set(false);
         },
-        error: () => {
+        error: (error) => {
+          this.error.set(error.status);
           this.loading.set(false);
         }
       });

@@ -3,6 +3,8 @@
     <h1>Lista de repositórios do {{userId}}</h1>
     @if (loading()) {
       <app-loading />
+    } @else if (error()) {
+      <app-error [errorCode]="error()"/>
     } @else { 
       <div class="repositories-list__actions">
         <button type="button" (click)="sortListByStarCount()"><img ngSrc="/star-icon.svg" alt="ordernar por quantidade de estrelas" width="17" height="17"/></button>
