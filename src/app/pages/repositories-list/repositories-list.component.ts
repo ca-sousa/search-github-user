@@ -21,7 +21,7 @@ export class RepositoriesListComponent {
   loading = signal(false);
   error = signal<number | null>(null);
   userRepositories: UserRepositories[] | undefined;
-  orderStarAscending: boolean = true;
+  orderStarAscending = true;
 
   constructor(
     private route:ActivatedRoute, 
