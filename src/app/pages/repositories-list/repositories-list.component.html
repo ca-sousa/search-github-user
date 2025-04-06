@@ -7,9 +7,9 @@
       <app-error [errorCode]="error()"/>
     } @else { 
       <div class="repositories-list__actions">
-        <button type="button" (click)="sortListByStarCount()"><img ngSrc="/star-icon.svg" alt="ordernar por quantidade de estrelas" width="17" height="17"/></button>
-        <button type="button" (click)="sortListByAscendingAlphaOrder()"><img ngSrc="/sort-up-icon.svg" alt="ordernar por nome de forma crescente" width="17" height="17"/></button>
-        <button type="button" (click)="sortListByDescendingAlphaOrder()"><img ngSrc="/sort-down-icon.svg" alt="ordernar por nome de forma decrescente" width="17" height="17"/></button>
+        <button data-testid="button-start-sort" type="button" (click)="sortListByStarCount()"><img ngSrc="/star-icon.svg" alt="ordernar por quantidade de estrelas" width="17" height="17"/></button>
+        <button data-testid="button-sort-ascending" type="button" (click)="sortListByAscendingAlphaOrder()"><img ngSrc="/sort-up-icon.svg" alt="ordernar por nome de forma crescente" width="17" height="17"/></button>
+        <button data-testid="button-sort-descending" type="button" (click)="sortListByDescendingAlphaOrder()"><img ngSrc="/sort-down-icon.svg" alt="ordernar por nome de forma decrescente" width="17" height="17"/></button>
       </div>
       <div class="repositories-list__container">
         @for (repository of userRepositories; track repository.id) {
