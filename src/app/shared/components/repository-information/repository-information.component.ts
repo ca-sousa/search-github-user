@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserRepositories } from '../../../interfaces/github';
 
 @Component({
   selector: 'app-repository-information',
@@ -8,12 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './repository-information.component.scss'
 })
 export class RepositoryInformationComponent {
-  repositoryInformation = {
-    id: 1,
-    name: 'monalisa octocat',
-    description: "There once was...",
-    html_url: 'https://github.com/octocat/Hello-World',
-    stargazers_count: 2, 
-    language: 'JavaScript',
-  };
+  @Input() repositoryInformation!: UserRepositories;
 }

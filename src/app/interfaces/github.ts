@@ -10,3 +10,13 @@ export interface GithubUser {
   followers: number;
   following: number;
 }
+
+export interface UserRepositories {
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+  stargazers_count: number;
+  language: string; 
+}
+

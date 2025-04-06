@@ -1,6 +1,18 @@
 <main>
-  <section>
-    <h1>Lista de repositórios do 'usuario'</h1>
-    <app-repository-information />
+  <section class="repositories-list">
+    <h1>Lista de repositórios do {{userId}}</h1>
+    @if (!loading()) {
+      <app-loading />
+    }
+    <div class="repositories-list__actions">
+      <button><img ngSrc="/star-icon.svg" alt="ordernar por quantidade de estrelas" width="17" height="17"/></button>
+      <button><img ngSrc="/sort-up-icon.svg" alt="ordernar por nome de forma crescente" width="17" height="17"/></button>
+      <button><img ngSrc="/sort-down-icon.svg" alt="ordernar por nome de forma decrescente" width="17" height="17"/></button>
+    </div>
+    <div class="repositories-list__container">
+      @for (repository of userRepositories; track repository.id) {
+        <app-repository-information [repositoryInformation]="repository"/>
+      }
+    </div>
   </section>
 </main>
