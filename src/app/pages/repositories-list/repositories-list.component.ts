@@ -19,6 +19,7 @@ export class RepositoriesListComponent {
   userId!: string;
   loading = signal(false);
   userRepositories: UserRepositories[] | undefined;
+  orderStarAscending: boolean = true;
 
   constructor(
     private route:ActivatedRoute, 
@@ -48,5 +49,23 @@ export class RepositoriesListComponent {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  };
+
+  sortListByStarCount():void {
+    this.userRepositories = this.userRepositories?.sort((a, b) => {
+      return this.orderStarAscending 
+      ? a.stargazers_count - b.stargazers_count
+      : b.stargazers_count - a.stargazers_count
+    });
+
+    this.orderStarAscending = !this.orderStarAscending;
+  };
+
+  sortListByAscendingAlphaOrder():void {
+    this.userRepositories = this.userRepositories?.sort((a, b) => a.name.localeCompare(b.name));
+  };
+
+  sortListByDescendingAlphaOrder():void {
+    this.userRepositories = this.userRepositories?.sort((a, b) => b.name.localeCompare(a.name));
   };
 }
