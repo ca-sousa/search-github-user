@@ -1,59 +1,53 @@
-# SearchGithubUser
+# Search GithubUser
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Project for searching Github user and their repositories, consuming the Github API. 
 
-## Development server
+------
+### Desktop Version
+https://github.com/user-attachments/assets/161cc6e9-d610-4962-abd2-e2bc4423dd31
 
-To start a local development server, run:
+### Mobile Version
+https://github.com/user-attachments/assets/6585db2f-68ea-463b-bdbb-bd5167284b76
 
+------
+## Features
+- Search for a username on Github
+- Search the repositories of the user selected
+- Error Handling (General or Not Found)
+- Loading Handling
+- Unit Tests
+- Lint and Prettier Configured
+
+------
+## How to Run 
+1. Make Git clone
 ```bash
-ng serve
+git clone https://github.com/ca-sousa/search-github-user.git
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Install all dependecies 
 ```bash
-ng generate component component-name
+npm i
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. Set Github Token on Environment File \
+Copy the file: "src\environments\environment.default.ts" and remove ".default" from the name. \
+Replace "YOUR_GITHUB_TOKEN" with your GitHub Token - you can learn more about it in the following links: \
+[fine-grained](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) |
+[generating an installation access token](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-an-installation-access-token-for-a-github-app) |
+[generating a user access token](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) \
+> I used the first option, but you can select the best option for you and adapt the code for the option selected.
 
+4. Run the application 
 ```bash
-ng generate --help
+npm run start
 ```
 
-## Building
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. 
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+------
+## Technologies 
+- TypeScript
+- Angular 19
+- Sass
+- Karma and Jasmine (For testing)
